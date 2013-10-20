@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+function verifying(){
+		var str1=document.login.uname.value;
+		var valid="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		for(i=0;i<str1.length;i++){
+			if(valid.indexOf(str1.charAt(i))==-1){
+				alert("please insert character only");
+				return false;
+			}
+		}
+		if(document.login.uname.value==""){
+			alert("Please insert name");
+			return false;
+		}
+		if(document.login.pass.value==""){
+			alert("Please insert a passwword");
+			return false;
+		}
+}
+</script>
+</head>
+<body bgcolor = green>
+<form method = post action = login.php name =login>
+<table bgcolor=white border =0 align =center >
+<tr><td>User Name </td>
+	<td><input type = text name =uname ></td></tr>
+<tr><td>Password</td>
+	<td><input type = password name =pass ></td></tr>
+<tr><td><input type = submit value ="Login" onclick ="return verifying(login);">
+	<td><input type = submit value = reset>
+</table>
+</body>
+</html>
+	
